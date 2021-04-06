@@ -1,12 +1,12 @@
-index:
-    path: /
-    controller: App\Controller\TestController::index
+# index:
+#     path: /
+#     controller: App\Controller\TestController::index
 
-test:
-  path: /test/{age<\d+>?0}
-  controller: App\Controller\TestController::test
-  method: [GET, POST]
-  schemes: [http, https]
+# test:
+#   path: /test/{age<\d+>?0}
+#   controller: App\Controller\TestController::test
+#   methods: [GET, POST]
+#   schemes: [http, https]
   # defaults:
   #   age: 0
   # requirements:

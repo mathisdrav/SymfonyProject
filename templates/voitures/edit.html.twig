@@ -1,0 +1,44 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Modifier une voiture{% endblock %}
+
+{% block body %}
+    <h3>Modifier une voiture : <a class="btn btn-secondary" href="javascript:history.back()" role="button">Retour</a></h3>
+    {{ form_start(form, {'attr': {'class': 'row g-3'}}) }}
+    <div class="col-md-6">
+        {{ form_label(form.marque) }}
+        {{ form_widget(form.marque) }}
+ 	</div> 
+  	<div class="col-md-6">
+    	{{ form_label(form.modele) }}
+        {{ form_widget(form.modele) }}
+  	</div>
+    <div class="mb-3">
+        {{ form_label(form.description) }}
+        {{ form_widget(form.description) }}
+	</div>
+	<div class="col-md-3">
+        {{ form_label(form.finition) }}
+        {{ form_widget(form.finition) }}
+  	</div>
+  	<div class="col-md-3">
+        {{ form_label(form.annee, "Année") }}
+        {{ form_widget(form.annee) }}
+  	</div>
+  	<div class="col-md-3">
+        {{ form_label(form.puissance) }}
+        {{ form_widget(form.puissance) }}
+  	</div>
+  	<div class="col-md-3">
+        {{ form_label(form.prix) }}
+        {{ form_widget(form.prix) }}
+  	</div>
+  	<div class="col-md-6">
+        {{ form_label(form.uploadImage, "Insérer l'image") }}
+        {{ form_widget(form.uploadImage, {"required" : false}) }}
+	</div>
+    <div class="col-12">
+    	<button type="submit" class="btn btn-primary">Modifier</button>
+  	</div>
+    {{ form_end(form) }}
+{% endblock %}

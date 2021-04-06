@@ -1,0 +1,32 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+<div class="row row-cols-1 row-cols-md-3 g-4">
+	{% for voiture in voitures %}
+		<a href="{{ url('voiture_show', {'id':voiture.id}) }}" style="text-decoration:none; color:black"> {#relative_path(['show/', voiture.id ]|join)#}
+			<div class="col">
+				<div class="card h-100">
+					<img src="{{ asset(['voiture/', voiture.photoPrincipale ]|join)|imagine_filter('dimensionVoiture') }}" class="card-img-top" alt="{{ voiture.modele }}">
+					<div class="card-body">
+						<h1>{{ voiture.marque }} </h1>
+						<h5 class="card-title">{{ voiture.modele }}</h5>
+						<table style="border-top: solid 1px grey;">
+							<tr>
+	      						<td style="width: 77%">{{ voiture.annee }}</td>
+	      						<td><h4 class="card-title">{{ voiture.prix }} €</h4></td>
+	    					</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</a>
+	{% endfor %}
+</div>
+
+<div class="pagination">
+    {{ knp_pagination_render(voitures, 'twitter_bootstrap_v4_pagination.html.twig') }}
+</div>
+
+{% endblock %}
